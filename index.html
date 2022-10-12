@@ -21,7 +21,7 @@
       <!-- The entered class should be added to the below paragraph -->
       <input type="text" v-model="userInput"/>
       <!-- (available classes: "user1", "user2") -->
-      <p :class="[userInput, {visible:isVisible}, {hidden:!isVisible}]">
+      <p :class="[userClass, visibility]">
         Style me!
       </p>
       <button @click="handleToggle">Toggle Paragraph</button>

@@ -3,12 +3,20 @@ const app = Vue.createApp({
         return {
             userInput: '',
             userBackgoundColor: '',
-            isVisible: true
+            visibility: 'visible'
         }
     },
+    computed: {
+        userClass() {
+            if (this.userInput === 'user1') return 'user1';
+            else if (this.userInput === 'user2') return 'user2';
+        }
+    }
+    ,
     methods: {
         handleToggle() {
-            this.isVisible = !this.isVisible;
+            if (this.visibility === 'visible') this.visibility = 'hidden';
+            else if (this.visibility === 'hidden') this.visibility = 'visible';
         }
     }
 });
